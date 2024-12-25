@@ -1,15 +1,14 @@
-<!-- resources/views/welcome.blade.php -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Desa Dalung</title>
+    <title>Website Desa Blumbangrejo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .hero-section {
-            background-image: url('/background.jpg');
+            background-image: url('/images/desa.jpg');
             background-size: cover;
             background-position: center;
             min-height: 600px;
@@ -75,7 +74,6 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="/logo.png" height="40" alt="Logo Desa">
                 PEMERINTAH DESA BLUMBANGREJO
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -83,20 +81,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Profile Desa
-                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('profile') }}">Profil Desa</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Pemerintahan Desa
-                        </a>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pemerintahan Desa</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Pelayanan
-                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pelayanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">APBDes</a>
@@ -134,25 +127,25 @@
             <div class="row g-4">
                 <div class="col-md-3 col-6">
                     <div class="menu-item">
-                        <img src="/icons/map.png" alt="Peta Desa" class="menu-icon">
+                        <img src="/icons/peta.png" alt="Peta Desa" class="menu-icon">
                         <h6 class="mt-2">PETA DESA</h6>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="menu-item">
-                        <img src="/icons/sidumas.png" alt="SIDUMAS" class="menu-icon">
+                        <img src="/api/placeholder/100" alt="SIDUMAS" class="menu-icon">
                         <h6 class="mt-2">SIDUMAS</h6>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="menu-item">
-                        <img src="/icons/akudicari.png" alt="AKUDICARI" class="menu-icon">
+                        <img src="/api/placeholder/100" alt="AKUDICARI" class="menu-icon">
                         <h6 class="mt-2">AKUDICARI</h6>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="menu-item">
-                        <img src="/icons/pengumuman.png" alt="Pengumuman" class="menu-icon">
+                        <img src="/api/placeholder/100" alt="Pengumuman" class="menu-icon">
                         <h6 class="mt-2">PENGUMUMAN</h6>
                     </div>
                 </div>
@@ -170,7 +163,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
-                                <img src="/news-thumbnail.jpg" alt="Berita" style="width: 200px; height: 150px; object-fit: cover;">
+                                <img src="/api/placeholder/200/150" alt="Berita" style="width: 200px; height: 150px; object-fit: cover;">
                                 <div class="ms-3">
                                     <h5>Kegiatan Orientasi Lapangan Peningkatan Kapasitas</h5>
                                     <p class="text-muted">Kegiatan Orientasi Lapangan Peningkatan Kapasitas dan Wawasan Perangkat dan Staf Desa Dalung Tahun 2024, pada Rabu-Kamis (29-31 Mei 2024)...</p>
