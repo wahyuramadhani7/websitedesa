@@ -109,13 +109,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile') }}">Profil Desa</a>
+                        <a class="nav-link active" href="{{ route('profile') }}">Profil Desa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pemerintahan Desa</a>
+                        <a class="nav-link active" href="{{ route('infografis') }}">Infografis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pelayanan</a>
+                        <a class="nav-link" href="{{ route('pelayanan') }}">Pelayanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">APBDes</a>
