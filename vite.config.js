@@ -8,4 +8,13 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        // Mengubah output directory ke 'dist'
+        outDir: 'dist',
+        // Pastikan asset manifest dibuat
+        manifest: true,
+        rollupOptions: {
+            input: ['resources/css/app.css', 'resources/js/app.js']
+        }
+    }
 });
