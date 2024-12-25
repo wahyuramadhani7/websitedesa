@@ -7,6 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        .navbar {
+            background-color: #2E8B57 !important; 
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: white !important;
+        }
+        
+        .navbar-brand img {
+            width: 50px;
+            margin-right: 15px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: white !important;
+            padding: 10px 20px;
+        }
+        
         .hero-section {
             background-image: url('/images/desa.jpg');
             background-size: cover;
@@ -43,6 +64,13 @@
             transform: translateY(-5px);
         }
         
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #2E8B57;
+        }
+        
         .social-links {
             position: fixed;
             right: 20px;
@@ -56,25 +84,24 @@
             margin: 10px 0;
             width: 40px;
             height: 40px;
-            background: #fff;
+            background: #2E8B57;
             border-radius: 50%;
             text-align: center;
             line-height: 40px;
-            color: #333;
+            color: white;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                PEMERINTAH DESA BLUMBANGREJO
+                <div>
+                    <h5 class="mb-0">Desa Blumbangrejo</h5>
+                    <small>Kecamatan Kunduran</small>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -84,7 +111,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('profile') }}">Profil Desa</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pemerintahan Desa</a>
                     </li>
@@ -112,8 +138,8 @@
                 <div class="mt-4">
                     <div class="input-group mx-auto" style="max-width: 500px;">
                         <input type="text" class="form-control" placeholder="Cari...">
-                        <button class="btn btn-dark" type="button">
-                            <i class="fas fa-search"></i>
+                        <button class="btn btn-light" type="button">
+                            <i class="fas fa-search text-success"></i>
                         </button>
                     </div>
                 </div>
@@ -154,12 +180,12 @@
     </section>
 
     <!-- Statistik dan Informasi -->
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
             <div class="row">
                 <!-- Informasi Terbaru -->
                 <div class="col-lg-8 mb-4">
-                    <h4 class="mb-4">Informasi Terbaru</h4>
+                    <h2 class="section-title">Informasi Terbaru</h2>
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
@@ -175,12 +201,12 @@
 
                 <!-- Statistik Penduduk -->
                 <div class="col-lg-4">
-                    <h4 class="mb-4">Statistik Penduduk</h4>
+                    <h2 class="section-title">Statistik Penduduk</h2>
                     <div class="card">
                         <div class="card-body">
                             <div class="row text-center">
                                 <div class="col-6 mb-3">
-                                    <i class="fas fa-users fa-2x mb-2 text-primary"></i>
+                                    <i class="fas fa-users fa-2x mb-2 text-success"></i>
                                     <h5>5787</h5>
                                     <p class="small">Kepala Keluarga</p>
                                 </div>
@@ -190,12 +216,12 @@
                                     <p class="small">Laki-laki</p>
                                 </div>
                                 <div class="col-6">
-                                    <i class="fas fa-female fa-2x mb-2 text-danger"></i>
+                                    <i class="fas fa-female fa-2x mb-2 text-success"></i>
                                     <h5>11,404</h5>
                                     <p class="small">Perempuan</p>
                                 </div>
                                 <div class="col-6">
-                                    <i class="fas fa-users fa-2x mb-2 text-info"></i>
+                                    <i class="fas fa-users fa-2x mb-2 text-success"></i>
                                     <h5>23,458</h5>
                                     <p class="small">Total Penduduk</p>
                                 </div>

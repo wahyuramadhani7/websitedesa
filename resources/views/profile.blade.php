@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Desa Kersik</title>
+    <title>Profil Desa Blumbangrejo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .navbar {
-            background-color: #DC3545 !important;
+            background-color: #2E8B57 !important; 
             padding: 15px 0;
         }
         
@@ -19,6 +19,7 @@
         }
         
         .navbar-brand img {
+            width: 50px;
             margin-right: 15px;
         }
         
@@ -27,36 +28,28 @@
             padding: 10px 20px;
         }
         
-        .logo-container {
-            text-align: center;
-            margin: 50px 0;
-        }
-        
-        .village-logo {
-            max-width: 300px;
-            margin-bottom: 20px;
-        }
         
         .village-name {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
             margin: 20px 0;
+            color: white;
         }
         
         .village-location {
-            color: #666;
-            margin-bottom: 40px;
+            color: #eee;
+            margin-bottom: 0;
         }
         
         .vision-mission {
-            background-color: #f8f9fa;
-            padding: 50px 0;
+            padding: 80px 0;
         }
         
         .section-title {
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 30px;
+            color: #2E8B57;
         }
         
         .mission-list {
@@ -65,46 +58,51 @@
         }
         
         .mission-list li {
-            margin-bottom: 15px;
-            padding-left: 25px;
+            margin-bottom: 20px;
+            padding-left: 30px;
             position: relative;
+            font-size: 1.1rem;
         }
         
         .mission-list li:before {
-            content: "";
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
             position: absolute;
             left: 0;
-            top: 8px;
-            width: 8px;
-            height: 8px;
-            background-color: #DC3545;
-            border-radius: 50%;
+            top: 0;
+            color: #2E8B57;
+            font-size: 1.2rem;
         }
         
         .visitor-count {
             position: fixed;
             left: 20px;
             bottom: 20px;
-            background: rgba(255, 192, 203, 0.9);
-            padding: 10px 20px;
+            background: #2E8B57;
+            padding: 15px 25px;
             border-radius: 5px;
             color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .complaint-button {
             position: fixed;
             right: 20px;
             bottom: 20px;
-            background: rgba(255, 192, 203, 0.9);
-            padding: 10px 20px;
+            background: #FF8C00;
+            padding: 15px 25px;
             border-radius: 5px;
             color: white;
             text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
         
         .complaint-button:hover {
-            background: pink;
-            color: white;
+            background: #FFA500;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -113,10 +111,9 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                
                 <div>
-                    <h5 class="mb-0">Desa Kersik</h5>
-                    <small>Kabupaten Kutai Kartanegara</small>
+                    <h5 class="mb-0">Desa Blumbangrejo</h5>
+                    <small>Kecamatan Kunduran</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -125,39 +122,34 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Profil Desa</a>
+                        <a class="nav-link" href="{{ route('beranda') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Infografis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Listing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">IDM</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Berita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Belanja</a>
+                        <a class="nav-link" href="#">Potensi Desa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PPID</a>
+                        <a class="nav-link" href="#">Transparansi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontak</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Logo dan Nama Desa -->
-    <div class="container">
-        <div class="logo-container">
-            <h1 class="village-name">DESA KERSIK</h1>
-            <p class="village-location">Kecamatan Marang Kayu, Kabupaten Kutai Kartanegara, Provinsi Kalimantan Timur</p>
+        <div class="container">
+            <h1 class="village-name">DESA BLUMBANGREJO</h1>
+
         </div>
     </div>
 
@@ -168,21 +160,20 @@
                 <div class="col-md-12 mb-5">
                     <h2 class="section-title">VISI</h2>
                     <p class="lead">
-                        "Desa Kersik sebagai Desa Wisata yang mampu mengelola potensi Desa dan pembangunan berkelanjutan untuk mewujudkan masyarakat yang sejahtera"
+                        "Terwujudnya Desa Blumbangrejo yang Maju, Mandiri, dan Sejahtera dengan berbasis pada Potensi Lokal, Teknologi, dan Pembangunan Berkelanjutan"
                     </p>
                 </div>
                 <div class="col-md-12">
                     <h2 class="section-title">MISI</h2>
                     <ul class="mission-list">
-                        <li>Mewujudkan tata kelola pemerintahan yang baik</li>
-                        <li>Mengembangkan kegiatan keagamaan</li>
-                        <li>Meningkatkan kualitas pendidikan dan sumber daya manusia</li>
-                        <li>Mengembangkan teknologi informasi</li>
-                        <li>Pembangunan infrastruktur, sarana dan prasarana</li>
-                        <li>Mengembangkan seluruh usaha potensi desa</li>
-                        <li>Meningkatkan kualitas dan membangun kesadaran kesehatan masyarakat</li>
-                        <li>Meningkatkan perekonomian dan kesejahteraan masyarakat</li>
-                        <li>Membangun kerjasama dan kemitraan strategis</li>
+                        <li>Mewujudkan tata kelola pemerintahan yang transparan, akuntabel, dan partisipatif</li>
+                        <li>Meningkatkan kualitas pendidikan dan pengembangan sumber daya manusia</li>
+                        <li>Mengembangkan potensi ekonomi lokal berbasis pertanian, peternakan, dan UMKM</li>
+                        <li>Meningkatkan infrastruktur, sarana, dan prasarana desa yang menunjang perekonomian</li>
+                        <li>Menjalin kerjasama dengan berbagai pihak untuk mendukung pembangunan desa</li>
+                        <li>Menciptakan lingkungan yang bersih, sehat, dan ramah lingkungan</li>
+                        <li>Melestarikan seni, budaya, dan kearifan lokal sebagai aset desa</li>
+                        <li>Mengoptimalkan pemanfaatan teknologi informasi untuk pelayanan publik dan promosi potensi desa</li>
                     </ul>
                 </div>
             </div>
@@ -192,15 +183,14 @@
     <!-- Visitor Counter -->
     <div class="visitor-count">
         <i class="fas fa-users me-2"></i>
-        Kunjungan Hari Ini
+        Pengunjung Hari Ini
         <br>
-        <strong>504</strong>
+        <strong>847</strong>
     </div>
-
     <!-- Complaint Button -->
     <a href="#" class="complaint-button">
-        <i class="fas fa-headphones me-2"></i>
-        Pengaduan
+        <i class="fas fa-comment-alt me-2"></i>
+        Layanan Pengaduan
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
