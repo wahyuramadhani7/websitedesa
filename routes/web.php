@@ -15,3 +15,14 @@ Route::get('/infografis', function () {
 Route::get('/pelayanan', function () {
     return view('pelayanan');
 })->name('pelayanan');
+Route::get('/dana', function () {
+    return view('dana');
+})->name('dana');
+Route::get('/UMKMdesa', function () {
+    return view('UMKMdesa');
+})->name('UMKMdesa');
+
+
+
+
+

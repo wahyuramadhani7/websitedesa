@@ -121,7 +121,7 @@
                             <a class="nav-link" href="{{ route('pelayanan') }}">Pelayanan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">APBDes</a>
+                            <a class="nav-link" href="{{ route('dana') }}">APBDes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">UMKM Desa</a>

@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografis Desa Blumbangrejo</title>
+    <title>UMKM Desa Blumbangrejo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Keeping consistent styles */
         .navbar {
             background-color: #2E8B57 !important; 
             padding: 15px 0;
@@ -16,11 +17,6 @@
             display: flex;
             align-items: center;
             color: white !important;
-        }
-        
-        .navbar-brand img {
-            width: 50px;
-            margin-right: 15px;
         }
         
         .navbar-nav .nav-link {
@@ -37,34 +33,32 @@
             padding-top: 40px;
         }
         
-        .infographic-card {
+        .umkm-card {
             border: none;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             margin-bottom: 30px;
+            overflow: hidden;
         }
 
-        .infographic-card:hover {
+        .umkm-card:hover {
             transform: translateY(-5px);
         }
 
-        .infographic-icon {
-            font-size: 3rem;
-            color: #2E8B57;
-            margin-bottom: 20px;
+        .umkm-img {
+            height: 200px;
+            object-fit: cover;
         }
 
-        .infographic-title {
-            color: #2E8B57;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .infographic-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
+        .category-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #2E8B57;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
         }
 
         .visitor-count {
@@ -90,11 +84,18 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-        
-        .complaint-button:hover {
-            background: #FFA500;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+
+        .filter-button {
+            background-color: #2E8B57;
+            color: white;
+            border: none;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-button:hover {
+            background-color: #236B42;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -126,81 +127,73 @@
                         <a class="nav-link" href="{{ route('dana') }}">APBDes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">UMKM Desa</a>
+                        <a class="nav-link active" href="{{ route('UMKMdesa') }}">UMKM Desa</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Infografis Section -->
+    <!-- UMKM Section -->
     <div class="container">
-        <h2 class="section-title">INFOGRAFIS DESA BLUMBANGREJO</h2>
-        <div class="row mt-5">
-            <!-- Luas Wilayah -->
+        <h2 class="section-title">UMKM DESA BLUMBANGREJO</h2>
+        
+        <!-- Filter Buttons -->
+        <div class="text-center mb-4">
+            <button class="btn filter-button">Semua</button>
+            <button class="btn filter-button">Makanan</button>
+            <button class="btn filter-button">Kerajinan</button>
+            <button class="btn filter-button">Pertanian</button>
+            <button class="btn filter-button">Jasa</button>
+        </div>
+
+        <div class="row mt-4">
+            <!-- UMKM Card 1 -->
             <div class="col-md-4">
-                <div class="card infographic-card p-4">
-                    <div class="text-center">
-                        <i class="fas fa-map infographic-icon"></i>
-                        <h4 class="infographic-title">Luas Wilayah</h4>
-                        <p class="infographic-value">12,5 km<sup>2</sup></p>
-                    </div>
-                </div>
-            </div>
-  
-            <!-- Jumlah Penduduk -->
-            <div class="col-md-4">
-                <div class="card infographic-card p-4">
-                    <div class="text-center">                       
-                        <i class="fas fa-users infographic-icon"></i>
-                        <h4 class="infographic-title">Jumlah Penduduk</h4>
-                        <p class="infographic-value">6.542 Jiwa</p>
+                <div class="card umkm-card">
+                    <span class="category-badge">Makanan</span>
+                    <img src="/images/UMKM.jpg" class="card-img-top umkm-img" alt="Keripik Singkong">
+                    <div class="card-body">
+                        <h5 class="card-title">Keripik Singkong "Bu Siti"</h5>
+                        <p class="card-text">Keripik singkong dengan berbagai varian rasa. Produksi rumahan dengan bahan berkualitas.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-map-marker-alt"></i> RT 03/RW 02</span>
+                            <a href="#" class="btn btn-success">Hubungi</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Jumlah Keluarga -->
+            <!-- UMKM Card 2 -->
             <div class="col-md-4">
-                <div class="card infographic-card p-4">
-                    <div class="text-center">
-                        <i class="fas fa-home infographic-icon"></i>
-                        <h4 class="infographic-title">Jumlah Keluarga</h4>
-                        <p class="infographic-value">1.738 KK</p>  
+                <div class="card umkm-card">
+                    <span class="category-badge">Kerajinan</span>
+                    <img src="/images/UMKM2.jpg" class="card-img-top umkm-img" alt="Anyaman Bambu">
+                    <div class="card-body">
+                        <h5 class="card-title">Anyaman Bambu "Kreatif"</h5>
+                        <p class="card-text">Kerajinan anyaman bambu tradisional dengan sentuhan modern. Tersedia berbagai model.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-map-marker-alt"></i> RT 05/RW 01</span>
+                            <a href="#" class="btn btn-success">Hubungi</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Potensi Pertanian -->
-            <div class="col-md-4">  
-                <div class="card infographic-card p-4">
-                    <div class="text-center">
-                        <i class="fas fa-seedling infographic-icon"></i>
-                        <h4 class="infographic-title">Potensi Pertanian</h4>
-                        <p class="infographic-value">325 Hektar</p>
-                    </div>  
-                </div>
-            </div>
-
-            <!-- Fasilitas Pendidikan -->
-            <div class="col-md-4"> 
-                <div class="card infographic-card p-4">
-                    <div class="text-center">
-                        <i class="fas fa-school infographic-icon"></i>  
-                        <h4 class="infographic-title">Fasilitas Pendidikan</h4>
-                        <p class="infographic-value">12 Sekolah</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Infrastruktur Jalan -->  
+            <!-- UMKM Card 3 -->
             <div class="col-md-4">
-                <div class="card infographic-card p-4"> 
-                    <div class="text-center">
-                        <i class="fas fa-road infographic-icon"></i>
-                        <h4 class="infographic-title">Infrastruktur Jalan</h4>  
-                        <p class="infographic-value">32 km</p>
+                <div class="card umkm-card">
+                    <span class="category-badge">Pertanian</span>
+                    <img src="/images/UMKM3.jpg" class="card-img-top umkm-img" alt="Tani Makmur">
+                    <div class="card-body">
+                        <h5 class="card-title">Tani Makmur</h5>
+                        <p class="card-text">Produk pertanian organik berkualitas. Sayuran dan buah-buahan segar dari kebun sendiri.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-map-marker-alt"></i> RT 02/RW 03</span>
+                            <a href="#" class="btn btn-success">Hubungi</a>
+                        </div>
                     </div>
-                </div>   
+                </div>
             </div>
         </div>
     </div>

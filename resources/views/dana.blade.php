@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografis Desa Blumbangrejo</title>
+    <title>APBDes Desa Blumbangrejo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -37,7 +37,7 @@
             padding-top: 40px;
         }
         
-        .infographic-card {
+        .budget-card {
             border: none;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -45,26 +45,56 @@
             margin-bottom: 30px;
         }
 
-        .infographic-card:hover {
+        .budget-card:hover {
             transform: translateY(-5px);
         }
 
-        .infographic-icon {
+        .budget-icon {
             font-size: 3rem;
             color: #2E8B57;
             margin-bottom: 20px;
         }
 
-        .infographic-title {
+        .budget-title {
             color: #2E8B57;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
-        .infographic-value {
-            font-size: 2rem;
+        .budget-value {
+            font-size: 1.8rem;
             font-weight: bold;
             color: #333;
+        }
+
+        .budget-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .progress {
+            height: 10px;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            background-color: #2E8B57;
+        }
+
+        .detail-section {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .table-budget {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table-budget thead {
+            background-color: #2E8B57;
+            color: white;
         }
 
         .visitor-count {
@@ -114,7 +144,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('beranda') }}">home</a>
+                        <a class="nav-link" href="{{ route('beranda') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('infografis') }}">Infografis</a>
@@ -123,7 +153,7 @@
                         <a class="nav-link" href="{{ route('pelayanan') }}">Pelayanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dana') }}">APBDes</a>
+                        <a class="nav-link active" href="#">APBDes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">UMKM Desa</a>
@@ -133,75 +163,105 @@
         </div>
     </nav>
 
-    <!-- Infografis Section -->
+    <!-- APBDes Section -->
     <div class="container">
-        <h2 class="section-title">INFOGRAFIS DESA BLUMBANGREJO</h2>
+        <h2 class="section-title">APBDES DESA BLUMBANGREJO 2024</h2>
+        
+        <!-- Summary Cards -->
         <div class="row mt-5">
-            <!-- Luas Wilayah -->
+            <!-- Total Anggaran -->
             <div class="col-md-4">
-                <div class="card infographic-card p-4">
+                <div class="card budget-card p-4">
                     <div class="text-center">
-                        <i class="fas fa-map infographic-icon"></i>
-                        <h4 class="infographic-title">Luas Wilayah</h4>
-                        <p class="infographic-value">12,5 km<sup>2</sup></p>
-                    </div>
-                </div>
-            </div>
-  
-            <!-- Jumlah Penduduk -->
-            <div class="col-md-4">
-                <div class="card infographic-card p-4">
-                    <div class="text-center">                       
-                        <i class="fas fa-users infographic-icon"></i>
-                        <h4 class="infographic-title">Jumlah Penduduk</h4>
-                        <p class="infographic-value">6.542 Jiwa</p>
+                        <i class="fas fa-money-bill-wave budget-icon"></i>
+                        <h4 class="budget-title">Total Anggaran</h4>
+                        <p class="budget-value">Rp 2.5 M</p>
+                        <p class="budget-subtitle">Tahun Anggaran 2024</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Jumlah Keluarga -->
+            <!-- Realisasi Anggaran -->
             <div class="col-md-4">
-                <div class="card infographic-card p-4">
+                <div class="card budget-card p-4">
                     <div class="text-center">
-                        <i class="fas fa-home infographic-icon"></i>
-                        <h4 class="infographic-title">Jumlah Keluarga</h4>
-                        <p class="infographic-value">1.738 KK</p>  
+                        <i class="fas fa-chart-pie budget-icon"></i>
+                        <h4 class="budget-title">Realisasi Anggaran</h4>
+                        <p class="budget-value">75%</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Potensi Pertanian -->
-            <div class="col-md-4">  
-                <div class="card infographic-card p-4">
-                    <div class="text-center">
-                        <i class="fas fa-seedling infographic-icon"></i>
-                        <h4 class="infographic-title">Potensi Pertanian</h4>
-                        <p class="infographic-value">325 Hektar</p>
-                    </div>  
-                </div>
-            </div>
-
-            <!-- Fasilitas Pendidikan -->
-            <div class="col-md-4"> 
-                <div class="card infographic-card p-4">
-                    <div class="text-center">
-                        <i class="fas fa-school infographic-icon"></i>  
-                        <h4 class="infographic-title">Fasilitas Pendidikan</h4>
-                        <p class="infographic-value">12 Sekolah</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Infrastruktur Jalan -->  
+            <!-- Sisa Anggaran -->
             <div class="col-md-4">
-                <div class="card infographic-card p-4"> 
+                <div class="card budget-card p-4">
                     <div class="text-center">
-                        <i class="fas fa-road infographic-icon"></i>
-                        <h4 class="infographic-title">Infrastruktur Jalan</h4>  
-                        <p class="infographic-value">32 km</p>
+                        <i class="fas fa-wallet budget-icon"></i>
+                        <h4 class="budget-title">Sisa Anggaran</h4>
+                        <p class="budget-value">Rp 625 JT</p>
+                        <p class="budget-subtitle">25% dari Total Anggaran</p>
                     </div>
-                </div>   
+                </div>
             </div>
+        </div>
+
+        <!-- Detail Section -->
+        <div class="detail-section">
+            <table class="table table-hover table-budget">
+                <thead>
+                    <tr>
+                        <th>Kategori Anggaran</th>
+                        <th>Alokasi</th>
+                        <th>Realisasi</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Penyelenggaraan Pemerintahan Desa</td>
+                        <td>Rp 750.000.000</td>
+                        <td>Rp 600.000.000</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pembangunan Desa</td>
+                        <td>Rp 1.000.000.000</td>
+                        <td>Rp 750.000.000</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pembinaan Kemasyarakatan</td>
+                        <td>Rp 500.000.000</td>
+                        <td>Rp 350.000.000</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pemberdayaan Masyarakat</td>
+                        <td>Rp 250.000.000</td>
+                        <td>Rp 175.000.000</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
